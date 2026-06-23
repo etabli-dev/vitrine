@@ -13,11 +13,11 @@ Categories:
   - Science & Education
 License: Apache-2.0
 AuthorName: Raban Heller
-SourceCode: https://github.com/etabli-dev/vitrine
-IssueTracker: https://github.com/etabli-dev/vitrine/issues
+SourceCode: https://github.com/etabli-dev/etabli-vitrine
+IssueTracker: https://github.com/etabli-dev/etabli-vitrine/issues
 Liberapay: rabanheller
 RepoType: git
-Repo: https://github.com/etabli-dev/vitrine.git
+Repo: https://github.com/etabli-dev/etabli-vitrine.git
 
 Builds:
   - versionName: "1.0"
