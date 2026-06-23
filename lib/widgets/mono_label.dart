@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../theme/theme.dart';
-import '../theme/tokens.dart';
+import '../theme/coder_theme_vitrine.dart';
+import '../theme/coder_theme_vitrine_tokens.dart';
 
 /// A small uppercase monospaced tag — used for source-type / status chips.
 class MonoTag extends StatelessWidget {

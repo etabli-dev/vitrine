@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'features/import/import_controller.dart';
 import 'features/import/share_listener.dart';
 import 'routing/router.dart';
-import 'theme/theme.dart';
+import 'theme/coder_theme_vitrine.dart';
 import 'theme/theme_controller.dart';
 
 class VitrineApp extends ConsumerStatefulWidget {

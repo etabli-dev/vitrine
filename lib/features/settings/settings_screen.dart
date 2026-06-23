@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../runtime/webr_runtime.dart';
 import '../../theme/theme_controller.dart';
-import '../../theme/tokens.dart';
+import '../../theme/coder_theme_vitrine_tokens.dart';
 import '../../widgets/bordered_card.dart';
 
 class SettingsScreen extends ConsumerWidget {

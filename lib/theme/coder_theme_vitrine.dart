@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'tokens.dart';
+import 'coder_theme_vitrine_tokens.dart';
 
 /// Builds the light/dark [ThemeData] for Établi Vitrine entirely from
 /// [VitrineTokens]. Nothing here invents new colors — it only maps tokens

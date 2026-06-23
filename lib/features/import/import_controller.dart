@@ -13,6 +13,7 @@ import '../../data/models/shiny_app.dart';
 import '../../data/models/source_type.dart';
 import '../../data/repositories/library_repository.dart';
 import '../../runtime/staging_service.dart';
+import '../../theme/coder_theme_vitrine_tokens.dart';
 import 'import_router.dart';
 import 'package_resolver.dart';
 
@@ -158,7 +159,7 @@ server <- function(input, output) {
   output\$distPlot <- renderPlot({
     x <- faithful\$waiting
     bins <- seq(min(x), max(x), length.out = input\$bins + 1)
-    hist(x, breaks = bins, col = "#28a745", border = "white",
+    hist(x, breaks = bins, col = "${VitrineTokens.accentHex}", border = "white",
          xlab = "Waiting time to next eruption (mins)",
          main = "Old Faithful — rendered offline by WebR")
   })

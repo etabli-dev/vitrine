@@ -5,6 +5,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
+import '../theme/coder_theme_vitrine_tokens.dart';
 import 'local_http_server.dart';
 
 /// Manages the bundled, offline WebR runtime.
@@ -79,7 +80,7 @@ class WebRRuntime {
   /// The runner document: boots WebR from this same origin, prints the R
   /// banner, and exposes a minimal REPL. Output is mirrored to Flutter via the
   /// `webr` JS handler.
-  static const String _indexHtml = r'''<!doctype html>
+  static const String _indexHtml = '''<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -88,19 +89,19 @@ class WebRRuntime {
 <style>
   :root { color-scheme: dark; }
   * { box-sizing: border-box; }
-  html, body { margin: 0; height: 100%; background: #0F1115; color: #E6E6E6;
+  html, body { margin: 0; height: 100%; background: ${VitrineTokens.darkBgHex}; color: ${VitrineTokens.darkTextHex};
     font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   body { display: flex; flex-direction: column; font-size: 13px; }
   #out { flex: 1; overflow-y: auto; padding: 12px; white-space: pre-wrap;
     word-break: break-word; line-height: 1.5; }
-  .stderr { color: #D98A00; }
-  .err { color: #D64545; }
-  .cmd { color: #28a745; }
-  .muted { color: #8A929E; }
-  #row { display: flex; align-items: center; border-top: 1px solid #2A2F37;
+  .stderr { color: ${VitrineTokens.warnHex}; }
+  .err { color: ${VitrineTokens.errorHex}; }
+  .cmd { color: ${VitrineTokens.accentHex}; }
+  .muted { color: ${VitrineTokens.darkTextMutedHex}; }
+  #row { display: flex; align-items: center; border-top: 1px solid ${VitrineTokens.darkBorderHex};
     padding: 8px 12px; gap: 8px; }
-  #row span { color: #28a745; }
-  #cmd { flex: 1; background: transparent; border: none; color: #E6E6E6;
+  #row span { color: ${VitrineTokens.accentHex}; }
+  #cmd { flex: 1; background: transparent; border: none; color: ${VitrineTokens.darkTextHex};
     font: inherit; outline: none; }
   #cmd:disabled { opacity: 0.4; }
 </style>
@@ -135,7 +136,7 @@ async function main() {
 
   const isolated = self.crossOriginIsolated === true;
   const version = await webR.evalRString('R.version.string');
-  const platform = await webR.evalRString('R.version$platform');
+  const platform = await webR.evalRString('R.version\$platform');
 
   print(version);
   print('Platform: ' + platform);

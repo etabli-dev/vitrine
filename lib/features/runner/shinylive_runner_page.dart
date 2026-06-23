@@ -10,7 +10,7 @@ import '../../data/repositories/library_repository.dart';
 import '../../runtime/local_http_server.dart';
 import '../../runtime/shinylive_engine.dart';
 import '../../runtime/staging_service.dart';
-import '../../theme/tokens.dart';
+import '../../theme/coder_theme_vitrine_tokens.dart';
 
 /// Runs an imported shinylive bundle offline. The bundle is self-contained
 /// (ships its own runtime + service worker), so it is served *plain* — no

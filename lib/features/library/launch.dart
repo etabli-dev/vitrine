@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../data/models/resolution_status.dart';
 import '../../data/models/shiny_app.dart';
-import '../../theme/tokens.dart';
+import '../../theme/coder_theme_vitrine_tokens.dart';
 
 /// Launches an app, surfacing package-resolution warnings first so the user
 /// knows before a (possibly failing) offline run.

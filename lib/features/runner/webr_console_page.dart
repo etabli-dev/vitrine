@@ -3,8 +3,8 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../runtime/webr_providers.dart';
-import '../../theme/theme.dart';
-import '../../theme/tokens.dart';
+import '../../theme/coder_theme_vitrine.dart';
+import '../../theme/coder_theme_vitrine_tokens.dart';
 
 /// Milestone 2 surface: boots the bundled WebR runtime in an embedded WebView
 /// and shows the R banner / a minimal REPL, fully offline.
