@@ -1,0 +1,32 @@
+---
+title: "Erste Schritte"
+sidebar: de
+---
+
+## Voraussetzungen
+
+- Ein Gerät mit iOS, Android oder Desktop.
+- Kein Server, kein Konto, keine Anmeldung.
+
+## Einrichtung
+
+1. **Installieren** aus dem jeweiligen Store oder als Desktop-Build.
+2. **Öffnen.** Beim ersten Start entpackt die App die eingebetteten Laufzeiten (WebR und shinylive) und richtet einen lokalen HTTP-Loopback-Server mit den nötigen Headern für `SharedArrayBuffer` ein.
+3. **Beispiel-App starten.** In der Bibliothek liegt eine mitgelieferte Shiny-Beispiel-App; ein Tipp darauf startet sie.
+
+## Eigene Shiny-App importieren
+
+| Quelle | Vorgehen |
+|--------|----------|
+| **Datei** | Importieren → Datei-Picker → eine `.zip` (shinylive-Bündel) oder ein Ordner mit `app.R` (bzw. `ui.R` + `server.R`). |
+| **URL** | Importieren-Dialog → URL eines `.zip`-Archivs eintragen. |
+| **Teilen-Sheet** | Eine `.zip` aus einer anderen App teilen und Vitrine als Ziel wählen. |
+| **Roh-Quelltext** | Importieren-Dialog → „Roh-Quelltext" → R-Code einfügen; Vitrine baut intern ein shinylive-`app.json`. |
+
+Importierte Apps landen in der Bibliothek (dem „Schaufenster") und lassen sich von dort wieder starten oder löschen.
+
+## Hinweise
+
+- shinylive-Bündel sind eigenständig — alle benötigten R-Pakete sind im Bündel enthalten.
+- Bei Roh-Quellcode versucht Vitrine, fehlende Pakete zu erkennen und meldet ggf., welche nicht in der eingebetteten WebR-Distribution verfügbar sind.
+- Quelloffene WebAssembly-Laufzeiten (WebR, shinylive); Versionen und Quell-URLs siehe `THIRD_PARTY.md` im Repo.

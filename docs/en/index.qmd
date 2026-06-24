@@ -1,0 +1,46 @@
+---
+title: "Etabli Vitrine"
+sidebar: en
+---
+
+<img src="../_icons/icon-vitrine.svg" alt="" width="80" align="right" style="margin:0 0 1rem 1rem;">
+
+<span class="etabli-badge">Flagship runtime</span>
+
+> Run interactive Shiny apps fully on-device.
+
+Etabli Vitrine bundles WebR and shinylive-R and runs interactive Shiny applications fully locally — without a server, without a network. Apps can be imported from the library, the file system, the system share sheet, or a URL. Statistical power analysis is delivered as a bundled Shiny app inside Vitrine; there is no separate power-analysis app anymore.
+
+![Vitrine — library on Android](../_screens/android-library.png){width=320}
+
+## Who benefits
+
+Authors of Shiny apps who want to demo without standing up a server — at conferences, in classrooms, to colleagues without an R install. And anyone who needs statistical tools (e.g. power calculations) mobile and offline.
+
+## Platforms
+
+| Platform | Status |
+|----------|--------|
+| iOS      | ✓      |
+| Android  | ✓      |
+| macOS    | ✓      |
+| Linux    | ✓      |
+| Windows  | ✓      |
+
+## Privacy
+
+No analytics, no third-party SDKs. The app runs fully offline; imported Shiny apps run inside a locally hosted WebAssembly sandbox. Nothing leaves the device.
+
+## Installation
+
+| Platform | Source |
+|----------|--------|
+| iOS      | App Store |
+| Android  | Google Play and the Etabli F-Droid repository |
+| Desktop  | direct build from the repo |
+
+Details: see [Getting Started](getting-started.qmd).
+
+## Support
+
+If you find the app useful: [Liberapay](https://liberapay.com/rabanheller/) · inside the app you will also find a Buy-Me-a-Coffee link.

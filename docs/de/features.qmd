@@ -1,0 +1,53 @@
+---
+title: "Funktionen"
+sidebar: de
+---
+
+Vitrine ist das Schaufenster für Shiny-Apps, die ohne Server laufen sollen. Eine eingebettete WebR-Laufzeit führt die App lokal aus; ein WebView rendert die UI.
+
+![](../_screens/android-library.png){width=320}
+
+## Module
+
+| Bereich | Funktion |
+|---------|----------|
+| **Bibliothek**     | Übersicht aller importierten Apps mit Name, Importquelle und Status. |
+| **Importer**       | Vier Quellen: Datei-Picker, URL, Teilen-Sheet, Roh-Quelltext. |
+| **Runner**         | Startet die ausgewählte App in einem lokalen WebView gegen die eingebettete WebR-Laufzeit. |
+| **Detail-Ansicht** | Metadaten, Pfad, Import-Datum, Lösch- und Wieder-Importier-Aktion. |
+
+## Importflüsse
+
+| Quelle | Erwartete Form |
+|--------|----------------|
+| shinylive-Bündel (`.zip`) | enthält `app.json` im shinylive-Format und läuft direkt. |
+| Roh-Quelltext-Bündel (`.zip` oder Ordner) | `app.R` *oder* `ui.R` + `server.R`; Vitrine packt es intern in shinylive-Form. |
+| Roh-Quelltext-Snippet | R-Code direkt eingefügt — Vitrine baut ein `app.json` aus einem virtuellen `app.R`. |
+
+## Laufzeit
+
+| Komponente | Zweck |
+|------------|-------|
+| **WebR**                | R-Laufzeit als WebAssembly (R 4.6). |
+| **shinylive**           | Shiny-Runtime, im Browser/WebView ausführbar. |
+| **Lokaler HTTP-Server** | Liefert Asset-Dateien mit den von WebR benötigten COOP/COEP-Headern aus, damit `SharedArrayBuffer` aktiv wird. Andernfalls Fallback auf PostMessage. |
+
+## Beispiele
+
+| App | Zweck |
+|-----|-------|
+| **Sample (shinylive)** | Mitgeliefertes Demo: Histogramm + Slider, zeigt den Runner ohne weitere Schritte. |
+| **Raw R sample** | Mitgelieferte Beispielinstanz für Roh-Quelltext-Import. |
+| **Statistische Power-Analyse** | Wird als Shiny-App in Vitrine ausgeliefert — kein separater App-Download nötig. |
+
+## Offline-Garantie
+
+Apps laufen vollständig in der lokalen WebAssembly-Sandbox. Nur beim Import per URL geht eine bewusste, vom Nutzer angestoßene Anfrage hinaus.
+
+## Bezug
+
+| Kanal | App |
+|-------|-----|
+| App Store (iOS) · Google Play (Android) | Vitrine |
+| F-Droid — eigenes Etabli-Repository | Vitrine (bündelt vorgefertigte WASM-Laufzeiten) |
+| Quellcode | [`etabli-dev/etabli-vitrine`](https://github.com/etabli-dev/etabli-vitrine) |

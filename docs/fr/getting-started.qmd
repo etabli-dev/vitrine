@@ -1,0 +1,32 @@
+---
+title: "Premiers pas"
+sidebar: fr
+---
+
+## Prérequis
+
+- Un appareil iOS, Android ou desktop.
+- Aucun serveur, aucun compte, aucune inscription.
+
+## Configuration
+
+1. **Installer** depuis le store concerné ou en build desktop.
+2. **Ouvrir.** Au premier lancement, l'appli décompresse les runtimes embarqués (WebR et shinylive) et lance un serveur HTTP loopback local avec les en-têtes nécessaires à `SharedArrayBuffer`.
+3. **Lancer l'exemple.** La bibliothèque contient une appli Shiny d'exemple ; un tap pour la démarrer.
+
+## Importer votre propre appli Shiny
+
+| Source | Comment |
+|--------|---------|
+| **Fichier** | Importer → sélecteur de fichiers → un `.zip` (bundle shinylive) ou un dossier avec `app.R` (ou `ui.R` + `server.R`). |
+| **URL** | Dialogue d'import → saisir l'URL d'un `.zip`. |
+| **Feuille de partage** | Partager un `.zip` depuis une autre appli et choisir Vitrine comme destination. |
+| **Source brute** | Dialogue d'import → « Source brute » → coller du code R ; Vitrine construit un `app.json` shinylive interne. |
+
+Les applis importées arrivent dans la bibliothèque (la « vitrine ») et peuvent y être relancées ou supprimées.
+
+## Remarques
+
+- Les bundles shinylive sont autonomes — tous les paquets R requis sont inclus dans le bundle.
+- Pour la source brute, Vitrine essaie de détecter les paquets manquants et signale ceux qui ne sont pas disponibles dans la distribution WebR embarquée.
+- WebR et shinylive sont des distributions WebAssembly open source ; versions et URL sources dans `THIRD_PARTY.md`.

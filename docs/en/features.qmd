@@ -1,0 +1,53 @@
+---
+title: "Features"
+sidebar: en
+---
+
+Vitrine is the display case for Shiny apps that need to run without a server. An embedded WebR runtime executes the app locally; a WebView renders the UI.
+
+![](../_screens/android-library.png){width=320}
+
+## Modules
+
+| Area | What it does |
+|------|--------------|
+| **Library** | List of imported apps with name, import source and status. |
+| **Importer** | Four sources: file picker, URL, share sheet, raw source. |
+| **Runner** | Launches the selected app in a local WebView against the embedded WebR runtime. |
+| **Detail view** | Metadata, path, import date; remove or re-import. |
+
+## Import flows
+
+| Source | Expected form |
+|--------|---------------|
+| shinylive bundle (`.zip`) | contains `app.json` in shinylive format and runs as-is. |
+| Raw-source bundle (`.zip` or folder) | `app.R` *or* `ui.R` + `server.R`; Vitrine packs it internally into shinylive form. |
+| Raw-source snippet | R code pasted directly — Vitrine builds an `app.json` from a virtual `app.R`. |
+
+## Runtime
+
+| Component | Role |
+|-----------|------|
+| **WebR**           | R runtime as WebAssembly (R 4.6). |
+| **shinylive**      | Shiny runtime, runnable in a browser/WebView. |
+| **Local HTTP server** | Serves asset files with the COOP/COEP headers WebR needs for `SharedArrayBuffer`. Falls back to PostMessage otherwise. |
+
+## Examples
+
+| App | Purpose |
+|-----|---------|
+| **Sample (shinylive)** | Bundled demo: histogram + slider; shows the runner without further setup. |
+| **Raw R sample** | Bundled example for the raw-source import path. |
+| **Statistical power analysis** | Delivered as a Shiny app inside Vitrine — no separate app download needed. |
+
+## Offline guarantee
+
+Apps run fully inside the local WebAssembly sandbox. The only outgoing request is when you deliberately import an app from a URL.
+
+## Where to get it
+
+| Channel | App |
+|---------|-----|
+| App Store (iOS) · Google Play (Android) | Vitrine |
+| F-Droid — Etabli's own repository | Vitrine (ships pre-built WASM runtimes) |
+| Source code | [`etabli-dev/etabli-vitrine`](https://github.com/etabli-dev/etabli-vitrine) |

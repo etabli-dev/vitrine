@@ -1,0 +1,46 @@
+---
+title: "Etabli Vitrine"
+sidebar: fr
+---
+
+<img src="../_icons/icon-vitrine.svg" alt="" width="80" align="right" style="margin:0 0 1rem 1rem;">
+
+<span class="etabli-badge">Application phare</span>
+
+> Exécuter des applications Shiny interactives, entièrement sur l'appareil.
+
+Etabli Vitrine embarque WebR et shinylive-R et exécute des applications Shiny interactives en local — sans serveur, sans réseau. Les applis peuvent être importées depuis la bibliothèque, le système de fichiers, la feuille de partage ou une URL. L'analyse de puissance statistique est livrée comme une appli Shiny intégrée à Vitrine ; il n'y a plus d'application autonome dédiée à la puissance.
+
+![Vitrine — bibliothèque sur Android](../_screens/android-library.png){width=320}
+
+## À qui ça s'adresse
+
+Aux auteurs d'applis Shiny qui veulent les démontrer sans monter de serveur — en conférence, en cours, à des collègues sans installation R. Et à toute personne ayant besoin d'outils statistiques (p. ex. calcul de puissance) mobile et hors ligne.
+
+## Plateformes
+
+| Plateforme | Statut |
+|------------|--------|
+| iOS        | ✓      |
+| Android    | ✓      |
+| macOS      | ✓      |
+| Linux      | ✓      |
+| Windows    | ✓      |
+
+## Vie privée
+
+Aucun outil d'analyse, aucun SDK tiers. L'appli fonctionne entièrement hors ligne ; les applis Shiny importées s'exécutent dans un bac à sable WebAssembly local. Rien ne quitte l'appareil.
+
+## Installation
+
+| Plateforme | Distribution |
+|------------|--------------|
+| iOS        | App Store |
+| Android    | Google Play et le dépôt F-Droid propre à Etabli |
+| Desktop    | build direct depuis le dépôt |
+
+Détails : voir [Premiers pas](getting-started.qmd).
+
+## Soutenir
+
+Si l'appli vous est utile : [Liberapay](https://liberapay.com/rabanheller/) · dans l'appli même vous trouverez également un lien Buy-Me-a-Coffee.
