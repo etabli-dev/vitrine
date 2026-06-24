@@ -3,52 +3,55 @@ title: "Features"
 sidebar: en
 ---
 
-Vitrine is the display case for Shiny apps that need to run without a server. An embedded WebR runtime executes the app locally; a WebView renders the UI.
+A guided, screenshot-by-screenshot walkthrough of Établi Vitrine v0.1.0 — the
+display case that runs Shiny apps offline via shinylive + WebR. Every figure below
+is a real screenshot of the v0.1.0 build on an Android device.
 
-![](../_screens/android-library.png){width=320}
+## The library
 
-## Modules
+The library ("display case") lists the Shiny apps you've imported, each runnable
+offline with one tap. On a fresh install it's empty and points you to **+ Import**.
 
-| Area | What it does |
-|------|--------------|
-| **Library** | List of imported apps with name, import source and status. |
-| **Importer** | Four sources: file picker, URL, share sheet, raw source. |
-| **Runner** | Launches the selected app in a local WebView against the embedded WebR runtime. |
-| **Detail view** | Metadata, path, import date; remove or re-import. |
+![Library — empty display case](../_screens/0.1.0/01-library.png){width=320}
 
-## Import flows
+## Importing a Shiny app
 
-| Source | Expected form |
-|--------|---------------|
-| shinylive bundle (`.zip`) | contains `app.json` in shinylive format and runs as-is. |
-| Raw-source bundle (`.zip` or folder) | `app.R` *or* `ui.R` + `server.R`; Vitrine packs it internally into shinylive form. |
-| Raw-source snippet | R code pasted directly — Vitrine builds an `app.json` from a virtual `app.R`. |
+**+ Import** opens a sheet with four sources: **From device files** (a shinylive
+`.zip`, or `app.R` / `ui.R` + `server.R`), **From URL** (download a `.zip`), and
+two **bundled samples** — *Sample shinylive app* and *Sample raw R app*.
+
+![Import sheet — sources incl. bundled samples](../_screens/0.1.0/02-import.png){width=320}
+
+## Bundled samples — v0.1.0 note
+
+The import sheet surfaces the bundled samples, but in v0.1.0 the sample asset is
+missing, so importing it fails **gracefully** (no crash) with *"Unable to load
+asset … does not exist or has empty data."* A real Shiny app still runs fine when
+imported from device files or a URL; the bundled sample is a known content gap.
+
+![Bundled-sample import fails — asset missing in v0.1.0](../_screens/0.1.0/03-import-failed-asset.png){width=320}
+
+## Settings
+
+Settings covers theme (light / dark / system) and runtime preferences.
+
+![Settings](../_screens/0.1.0/04-settings.png){width=320}
 
 ## Runtime
 
 | Component | Role |
 |-----------|------|
-| **WebR**           | R runtime as WebAssembly (R 4.6). |
-| **shinylive**      | Shiny runtime, runnable in a browser/WebView. |
-| **Local HTTP server** | Serves asset files with the COOP/COEP headers WebR needs for `SharedArrayBuffer`. Falls back to PostMessage otherwise. |
-
-## Examples
-
-| App | Purpose |
-|-----|---------|
-| **Sample (shinylive)** | Bundled demo: histogram + slider; shows the runner without further setup. |
-| **Raw R sample** | Bundled example for the raw-source import path. |
-| **Statistical power analysis** | Delivered as a Shiny app inside Vitrine — no separate app download needed. |
+| **WebR** | R runtime as WebAssembly. |
+| **shinylive** | Shiny runtime, runnable in a WebView. |
+| **Local HTTP server** | Serves assets with the COOP/COEP headers WebR needs for `SharedArrayBuffer`. |
 
 ## Offline guarantee
 
-Apps run fully inside the local WebAssembly sandbox. The only outgoing request is when you deliberately import an app from a URL.
+Apps run fully inside the local WebAssembly sandbox. The only outgoing request is
+when you deliberately import an app from a URL.
 
 ## Where to get it
 
-| Channel | App |
-|---------|-----|
-| Android (APK) — [GitHub Releases](https://github.com/etabli-dev/etabli-vitrine/releases) | Vitrine — **development build** (ships pre-built WASM runtimes) |
-| App Store (iOS) · Google Play (Android) | planned — not yet available |
-| F-Droid — Établi's own repository | planned — not yet available |
-| Source code | [`etabli-dev/etabli-vitrine`](https://github.com/etabli-dev/etabli-vitrine) |
+Android only for now — a **development build (signed APK)** via
+[GitHub Releases](https://github.com/etabli-dev/etabli-vitrine/releases/tag/v0.1.0).
+App Store, Google Play and F-Droid are planned but not yet available.

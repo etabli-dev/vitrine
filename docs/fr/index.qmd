@@ -11,7 +11,7 @@ sidebar: fr
 
 Établi Vitrine embarque WebR et shinylive-R et exécute des applications Shiny interactives en local — sans serveur, sans réseau. Les applis peuvent être importées depuis la bibliothèque, le système de fichiers, la feuille de partage ou une URL. L'analyse de puissance statistique est livrée comme une appli Shiny intégrée à Vitrine ; il n'y a plus d'application autonome dédiée à la puissance.
 
-![Vitrine — bibliothèque sur Android](../_screens/android-library.png){width=320}
+![Vitrine — bibliothèque sur Android](../_screens/0.1.0/01-library.png){width=320}
 
 ## À qui ça s'adresse
 

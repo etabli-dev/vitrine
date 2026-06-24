@@ -3,52 +3,57 @@ title: "Funktionen"
 sidebar: de
 ---
 
-Vitrine ist das Schaufenster für Shiny-Apps, die ohne Server laufen sollen. Eine eingebettete WebR-Laufzeit führt die App lokal aus; ein WebView rendert die UI.
+Ein bebilderter Rundgang durch Établi Vitrine v0.1.0 — die Vitrine, die
+Shiny-Apps offline über shinylive + WebR ausführt. Jede Abbildung ist ein echter
+Screenshot des v0.1.0-Builds auf einem Android-Gerät.
 
-![](../_screens/android-library.png){width=320}
+## Die Vitrine
 
-## Module
+Die Vitrine listet die importierten Shiny-Apps, jede mit einem Tipp offline
+ausführbar. Frisch installiert ist sie leer und verweist auf **+ Import**.
 
-| Bereich | Funktion |
-|---------|----------|
-| **Bibliothek**     | Übersicht aller importierten Apps mit Name, Importquelle und Status. |
-| **Importer**       | Vier Quellen: Datei-Picker, URL, Teilen-Sheet, Roh-Quelltext. |
-| **Runner**         | Startet die ausgewählte App in einem lokalen WebView gegen die eingebettete WebR-Laufzeit. |
-| **Detail-Ansicht** | Metadaten, Pfad, Import-Datum, Lösch- und Wieder-Importier-Aktion. |
+![Vitrine — leere Vitrine](../_screens/0.1.0/01-library.png){width=320}
 
-## Importflüsse
+## Eine Shiny-App importieren
 
-| Quelle | Erwartete Form |
-|--------|----------------|
-| shinylive-Bündel (`.zip`) | enthält `app.json` im shinylive-Format und läuft direkt. |
-| Roh-Quelltext-Bündel (`.zip` oder Ordner) | `app.R` *oder* `ui.R` + `server.R`; Vitrine packt es intern in shinylive-Form. |
-| Roh-Quelltext-Snippet | R-Code direkt eingefügt — Vitrine baut ein `app.json` aus einem virtuellen `app.R`. |
+**+ Import** öffnet ein Menü mit vier Quellen: **Aus Gerätedateien** (ein
+shinylive-`.zip` oder `app.R` / `ui.R` + `server.R`), **Aus URL** (ein `.zip`
+laden) und zwei **mitgelieferte Beispiele** — *Sample shinylive app* und *Sample
+raw R app*.
+
+![Import-Menü — Quellen inkl. mitgelieferter Beispiele](../_screens/0.1.0/02-import.png){width=320}
+
+## Mitgelieferte Beispiele — Hinweis v0.1.0
+
+Das Import-Menü zeigt die Beispiele an, doch in v0.1.0 fehlt die Beispiel-Datei;
+der Import schlägt deshalb **sauber** fehl (kein Absturz) mit „Unable to load asset
+… does not exist or has empty data". Eine echte Shiny-App läuft dennoch einwandfrei,
+wenn man sie aus Dateien oder per URL importiert.
+
+![Beispiel-Import schlägt fehl — Datei fehlt in v0.1.0](../_screens/0.1.0/03-import-failed-asset.png){width=320}
+
+## Einstellungen
+
+Die Einstellungen umfassen das Thema (hell / dunkel / System) und
+Laufzeit-Einstellungen.
+
+![Einstellungen](../_screens/0.1.0/04-settings.png){width=320}
 
 ## Laufzeit
 
-| Komponente | Zweck |
+| Komponente | Rolle |
 |------------|-------|
-| **WebR**                | R-Laufzeit als WebAssembly (R 4.6). |
-| **shinylive**           | Shiny-Runtime, im Browser/WebView ausführbar. |
-| **Lokaler HTTP-Server** | Liefert Asset-Dateien mit den von WebR benötigten COOP/COEP-Headern aus, damit `SharedArrayBuffer` aktiv wird. Andernfalls Fallback auf PostMessage. |
-
-## Beispiele
-
-| App | Zweck |
-|-----|-------|
-| **Sample (shinylive)** | Mitgeliefertes Demo: Histogramm + Slider, zeigt den Runner ohne weitere Schritte. |
-| **Raw R sample** | Mitgelieferte Beispielinstanz für Roh-Quelltext-Import. |
-| **Statistische Power-Analyse** | Wird als Shiny-App in Vitrine ausgeliefert — kein separater App-Download nötig. |
+| **WebR** | R-Laufzeit als WebAssembly. |
+| **shinylive** | Shiny-Laufzeit, in einer WebView ausführbar. |
+| **Lokaler HTTP-Server** | liefert Dateien mit den COOP/COEP-Headern, die WebR braucht. |
 
 ## Offline-Garantie
 
-Apps laufen vollständig in der lokalen WebAssembly-Sandbox. Nur beim Import per URL geht eine bewusste, vom Nutzer angestoßene Anfrage hinaus.
+Apps laufen vollständig in der lokalen WebAssembly-Sandbox. Die einzige ausgehende
+Anfrage entsteht, wenn du bewusst eine App per URL importierst.
 
 ## Bezug
 
-| Kanal | App |
-|-------|-----|
-| Android (APK) — [GitHub Releases](https://github.com/etabli-dev/etabli-vitrine/releases) | Vitrine — **Entwicklungs-Build** (bündelt vorgefertigte WASM-Laufzeiten) |
-| App Store (iOS) · Google Play (Android) | geplant — noch nicht verfügbar |
-| F-Droid — eigenes Établi-Repository | geplant — noch nicht verfügbar |
-| Quellcode | [`etabli-dev/etabli-vitrine`](https://github.com/etabli-dev/etabli-vitrine) |
+Vorerst nur Android — ein **Entwicklungs-Build (signierte APK)** über
+[GitHub Releases](https://github.com/etabli-dev/etabli-vitrine/releases/tag/v0.1.0).
+App Store, Google Play und F-Droid sind geplant, aber noch nicht verfügbar.

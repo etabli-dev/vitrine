@@ -11,7 +11,7 @@ sidebar: de
 
 Établi Vitrine bündelt WebR und shinylive-R und führt interaktive Shiny-Anwendungen vollständig lokal aus — ohne Server, ohne Netzwerk. Apps lassen sich über die Bibliothek, aus dem Datei-System, per Teilen-Sheet oder aus einer URL importieren. Statistische Power-Analyse wird in Form einer mitgelieferten Shiny-App ausgeliefert; eine eigenständige Power-App gibt es nicht mehr.
 
-![Vitrine — Bibliothek auf Android](../_screens/android-library.png){width=320}
+![Vitrine — Bibliothek auf Android](../_screens/0.1.0/01-library.png){width=320}
 
 ## Wer profitiert davon
 

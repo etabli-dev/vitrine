@@ -11,7 +11,7 @@ sidebar: en
 
 Établi Vitrine bundles WebR and shinylive-R and runs interactive Shiny applications fully locally — without a server, without a network. Apps can be imported from the library, the file system, the system share sheet, or a URL. Statistical power analysis is delivered as a bundled Shiny app inside Vitrine; there is no separate power-analysis app anymore.
 
-![Vitrine — library on Android](../_screens/android-library.png){width=320}
+![Vitrine — library on Android](../_screens/0.1.0/01-library.png){width=320}
 
 ## Who benefits
 

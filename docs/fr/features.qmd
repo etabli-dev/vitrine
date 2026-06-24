@@ -3,52 +3,58 @@ title: "Fonctionnalités"
 sidebar: fr
 ---
 
-Vitrine est la vitrine des applis Shiny qui doivent fonctionner sans serveur. Un runtime WebR embarqué exécute l'appli en local ; une WebView affiche l'UI.
+Une visite guidée, capture par capture, d'Établi Vitrine v0.1.0 — la vitrine qui
+exécute des applications Shiny hors ligne via shinylive + WebR. Chaque figure est
+une vraie capture d'écran de la version v0.1.0 sur un appareil Android.
 
-![](../_screens/android-library.png){width=320}
+## La vitrine
 
-## Modules
+La vitrine liste les applications Shiny que vous avez importées, chacune
+exécutable hors ligne d'une seule touche. À l'installation, elle est vide et
+invite à **+ Importer**.
 
-| Zone | Fonction |
-|------|----------|
-| **Bibliothèque**     | Liste des applis importées avec nom, source d'import et statut. |
-| **Importateur**      | Quatre sources : sélecteur de fichiers, URL, feuille de partage, source brute. |
-| **Runner**           | Lance l'appli sélectionnée dans une WebView locale contre le runtime WebR embarqué. |
-| **Vue détail**       | Métadonnées, chemin, date d'import ; suppression ou réimport. |
+![Vitrine — vitrine vide](../_screens/0.1.0/01-library.png){width=320}
 
-## Flux d'import
+## Importer une application Shiny
 
-| Source | Forme attendue |
-|--------|----------------|
-| Bundle shinylive (`.zip`) | contient un `app.json` au format shinylive et tourne tel quel. |
-| Bundle source brute (`.zip` ou dossier) | `app.R` *ou* `ui.R` + `server.R` ; Vitrine l'emballe en interne au format shinylive. |
-| Source brute (snippet) | code R collé — Vitrine construit un `app.json` depuis un `app.R` virtuel. |
+**+ Importer** ouvre une feuille avec quatre sources : **Depuis les fichiers de
+l'appareil** (un `.zip` shinylive, ou `app.R` / `ui.R` + `server.R`), **Depuis une
+URL** (télécharger un `.zip`), et deux **exemples intégrés** — *Sample shinylive
+app* et *Sample raw R app*.
 
-## Runtime
+![Feuille d'import — sources, dont les exemples intégrés](../_screens/0.1.0/02-import.png){width=320}
+
+## Exemples intégrés — note v0.1.0
+
+La feuille d'import propose les exemples intégrés, mais en v0.1.0 le fichier de
+l'exemple est absent ; l'import échoue donc **proprement** (sans plantage) avec
+« Unable to load asset … does not exist or has empty data ». Une vraie application
+Shiny s'exécute néanmoins très bien si on l'importe depuis les fichiers ou une URL.
+
+![L'import de l'exemple échoue — fichier manquant en v0.1.0](../_screens/0.1.0/03-import-failed-asset.png){width=320}
+
+## Réglages
+
+Les réglages couvrent le thème (clair / sombre / système) et les préférences
+d'exécution.
+
+![Réglages](../_screens/0.1.0/04-settings.png){width=320}
+
+## Exécution
 
 | Composant | Rôle |
 |-----------|------|
-| **WebR**          | Runtime R en WebAssembly (R 4.6). |
-| **shinylive**     | Runtime Shiny, exécutable dans un navigateur/WebView. |
-| **Serveur HTTP local** | Sert les fichiers d'assets avec les en-têtes COOP/COEP nécessaires à WebR pour activer `SharedArrayBuffer`. Bascule sur PostMessage sinon. |
-
-## Exemples
-
-| App | Objet |
-|-----|-------|
-| **Sample (shinylive)** | Démo intégrée : histogramme + curseur, montre le runner sans configuration. |
-| **Raw R sample** | Exemple intégré pour le flux d'import en source brute. |
-| **Analyse de puissance statistique** | Livrée comme appli Shiny dans Vitrine — pas de téléchargement d'appli supplémentaire. |
+| **WebR** | runtime R en WebAssembly. |
+| **shinylive** | runtime Shiny, exécutable dans une WebView. |
+| **Serveur HTTP local** | sert les fichiers avec les en-têtes COOP/COEP requis par WebR. |
 
 ## Garantie hors ligne
 
-Les applis tournent entièrement dans le bac à sable WebAssembly local. La seule requête sortante intervient lors d'un import explicite depuis une URL.
+Les applications s'exécutent entièrement dans le bac à sable WebAssembly local. La
+seule requête sortante a lieu si vous importez délibérément une appli depuis une URL.
 
-## Distribution
+## Où l'obtenir
 
-| Canal | App |
-|-------|-----|
-| Android (APK) — [GitHub Releases](https://github.com/etabli-dev/etabli-vitrine/releases) | Vitrine — **version de développement** (embarque des runtimes WASM précompilés) |
-| App Store (iOS) · Google Play (Android) | prévu — pas encore disponible |
-| F-Droid — dépôt propre à Établi | prévu — pas encore disponible |
-| Code source | [`etabli-dev/etabli-vitrine`](https://github.com/etabli-dev/etabli-vitrine) |
+Android uniquement pour l'instant — une **version de développement (APK signé)**
+via [GitHub Releases](https://github.com/etabli-dev/etabli-vitrine/releases/tag/v0.1.0).
+App Store, Google Play et F-Droid sont prévus mais pas encore disponibles.
