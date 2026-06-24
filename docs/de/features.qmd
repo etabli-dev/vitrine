@@ -48,6 +48,7 @@ Apps laufen vollständig in der lokalen WebAssembly-Sandbox. Nur beim Import per
 
 | Kanal | App |
 |-------|-----|
-| App Store (iOS) · Google Play (Android) | Vitrine |
-| F-Droid — eigenes Etabli-Repository | Vitrine (bündelt vorgefertigte WASM-Laufzeiten) |
+| Android (APK) — [GitHub Releases](https://github.com/etabli-dev/etabli-vitrine/releases) | Vitrine — **Entwicklungs-Build** (bündelt vorgefertigte WASM-Laufzeiten) |
+| App Store (iOS) · Google Play (Android) | geplant — noch nicht verfügbar |
+| F-Droid — eigenes Établi-Repository | geplant — noch nicht verfügbar |
 | Quellcode | [`etabli-dev/etabli-vitrine`](https://github.com/etabli-dev/etabli-vitrine) |

@@ -1,5 +1,5 @@
 ---
-title: "Etabli Vitrine"
+title: "Établi Vitrine"
 sidebar: en
 ---
 
@@ -9,7 +9,7 @@ sidebar: en
 
 > Run interactive Shiny apps fully on-device.
 
-Etabli Vitrine bundles WebR and shinylive-R and runs interactive Shiny applications fully locally — without a server, without a network. Apps can be imported from the library, the file system, the system share sheet, or a URL. Statistical power analysis is delivered as a bundled Shiny app inside Vitrine; there is no separate power-analysis app anymore.
+Établi Vitrine bundles WebR and shinylive-R and runs interactive Shiny applications fully locally — without a server, without a network. Apps can be imported from the library, the file system, the system share sheet, or a URL. Statistical power analysis is delivered as a bundled Shiny app inside Vitrine; there is no separate power-analysis app anymore.
 
 ![Vitrine — library on Android](../_screens/android-library.png){width=320}
 
@@ -33,11 +33,15 @@ No analytics, no third-party SDKs. The app runs fully offline; imported Shiny ap
 
 ## Installation
 
-| Platform | Source |
-|----------|--------|
-| iOS      | App Store |
-| Android  | Google Play and the Etabli F-Droid repository |
-| Desktop  | direct build from the repo |
+Établi Vitrine is **under active development**. There are no App Store, Google Play or F-Droid releases yet.
+
+| Channel | Status |
+|---------|--------|
+| Android (APK) | **Development build** via [GitHub Releases](https://github.com/etabli-dev/etabli-vitrine/releases) |
+| App Store (iOS) | planned — not yet available |
+| Google Play | planned — not yet available |
+| F-Droid | planned — not yet available |
+| Desktop (macOS, Windows, Linux) | build from source |
 
 Details: see [Getting Started](getting-started.qmd).
 

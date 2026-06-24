@@ -10,7 +10,7 @@ sidebar: fr
 
 ## Configuration
 
-1. **Installer** depuis le store concerné ou en build desktop.
+1. **Installer.** Établi Vitrine est en développement. Téléchargez la **version de développement (APK signé)** depuis [GitHub Releases](https://github.com/etabli-dev/etabli-vitrine/releases) et installez-la sur Android, ou compilez une version desktop depuis le dépôt. Les versions App Store, Google Play et F-Droid ne sont pas encore disponibles.
 2. **Ouvrir.** Au premier lancement, l'appli décompresse les runtimes embarqués (WebR et shinylive) et lance un serveur HTTP loopback local avec les en-têtes nécessaires à `SharedArrayBuffer`.
 3. **Lancer l'exemple.** La bibliothèque contient une appli Shiny d'exemple ; un tap pour la démarrer.
 

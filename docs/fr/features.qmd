@@ -48,6 +48,7 @@ Les applis tournent entièrement dans le bac à sable WebAssembly local. La seul
 
 | Canal | App |
 |-------|-----|
-| App Store (iOS) · Google Play (Android) | Vitrine |
-| F-Droid — dépôt propre à Etabli | Vitrine (embarque des runtimes WASM précompilés) |
+| Android (APK) — [GitHub Releases](https://github.com/etabli-dev/etabli-vitrine/releases) | Vitrine — **version de développement** (embarque des runtimes WASM précompilés) |
+| App Store (iOS) · Google Play (Android) | prévu — pas encore disponible |
+| F-Droid — dépôt propre à Établi | prévu — pas encore disponible |
 | Code source | [`etabli-dev/etabli-vitrine`](https://github.com/etabli-dev/etabli-vitrine) |

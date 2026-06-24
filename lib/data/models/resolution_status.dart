@@ -1,4 +1,4 @@
-// Copyright 2026 Raban Heller
+// Copyright 2026 R. Heller
 // SPDX-License-Identifier: Apache-2.0
 
 /// Outcome of resolving an app's R packages against the WebR WASM repo.

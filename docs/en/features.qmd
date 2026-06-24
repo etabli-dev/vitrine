@@ -48,6 +48,7 @@ Apps run fully inside the local WebAssembly sandbox. The only outgoing request i
 
 | Channel | App |
 |---------|-----|
-| App Store (iOS) · Google Play (Android) | Vitrine |
-| F-Droid — Etabli's own repository | Vitrine (ships pre-built WASM runtimes) |
+| Android (APK) — [GitHub Releases](https://github.com/etabli-dev/etabli-vitrine/releases) | Vitrine — **development build** (ships pre-built WASM runtimes) |
+| App Store (iOS) · Google Play (Android) | planned — not yet available |
+| F-Droid — Établi's own repository | planned — not yet available |
 | Source code | [`etabli-dev/etabli-vitrine`](https://github.com/etabli-dev/etabli-vitrine) |

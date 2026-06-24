@@ -10,7 +10,7 @@ sidebar: en
 
 ## Setup
 
-1. **Install** from the relevant store or as a desktop build.
+1. **Install.** Établi Vitrine is under development. Download the current **development build (signed APK)** from [GitHub Releases](https://github.com/etabli-dev/etabli-vitrine/releases) and install it on Android, or build for desktop from the repo. App Store, Google Play and F-Droid releases are not available yet.
 2. **Open.** On first launch the app unpacks the bundled runtimes (WebR and shinylive) and brings up a local HTTP loopback server with the headers WebR needs for `SharedArrayBuffer`.
 3. **Run the sample.** The library ships with a Shiny sample app; tap it to launch.
 
